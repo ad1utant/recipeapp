@@ -1,4 +1,7 @@
 import {useEffect, useRef, useState} from "react";
+import '/src/styles/App.css'
+import {Link} from "react-router-dom";
+
 function App() {
     const [inputValue, setInputValue] = useState('')
     const inputRef = useRef(null)
@@ -7,7 +10,6 @@ function App() {
         try {
             const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputValue}`);
             setData(await response.json());
-            console.log(data)
         }catch (err){
             console.error(err);
         }
@@ -34,11 +36,12 @@ function App() {
             <input ref={inputRef} placeholder={'search for meal'}/>
             <button type="submit">search</button>
         </form>
-        {data && data.meals && data.meals.map( (meal) => (
-            <p key={meal.idMeal}>{meal.strMeal}</p>
-        ))}
-        {data && data.meals === null ? <p> no dishes </p> : ""}
-
+        <div className={'mealsList'}>
+            {data && data.meals && data.meals.map( (meal) => (
+                <Link className={'meal'} to={meal.strMeal} key={meal.idMeal}>{meal.strMeal}</Link>
+            ))}
+            {data && data.meals === null ? <p> no dishes </p> : ""}
+        </div>
 
 
     </>

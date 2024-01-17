@@ -1,0 +1,9 @@
+.mealsList{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+.meal{
+    text-decoration: none;
+    color: black;
+}
