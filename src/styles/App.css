@@ -1,3 +1,10 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: Roboto;
+}
+
 .mealsList{
     display: flex;
     flex-direction: column;
@@ -6,4 +13,21 @@
 .meal{
     text-decoration: none;
     color: black;
+}
+form input{
+    width: 70vw;
+    height: 2vw;
+    border:0;
+    margin-bottom: 10px;
+}
+form input:focus {
+    outline: none;
+
+}
+
+form button{
+    width: 10vw;
+    height: 2vw;
+    background-color: white;
+    border: 0;
 }
