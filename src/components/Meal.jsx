@@ -11,6 +11,7 @@ function Meal(){
                 const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
                 const data = await response.json()
                 setDetails(data)
+            console.log(data)
         }catch (err){
                 console.error(err)
             }}
@@ -23,7 +24,7 @@ function Meal(){
 
         <div>
             {details ? <h1>{details.meals[0].strMeal}</h1> : null}
-
+            {details ? <img src={details.meals[0].strMealThumb}/> : null}
 
         </div>
     )
