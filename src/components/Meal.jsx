@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 
 let listIngredients = [];
 function Meal(){
-
+    let array = [];
     const {idMeal} = useParams()
     const [details,setDetails] = useState()
 
@@ -12,8 +12,11 @@ function Meal(){
         try {
             const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)
             const data = await response.json()
-            const {strIngredient1} = data.meals[0]
-            console.log(strIngredient1)
+            array = []
+            for(let i = 0 ; i<=20 ; i++){
+                array.push(data.meals[0][`strIngredient${i}`])
+            }
+            console.log(array)
             setDetails(data)
             console.log(data)
 
