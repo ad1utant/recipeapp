@@ -1,4 +1,16 @@
 .preformatted-text{
     white-space: pre-wrap;
-    width: 500px;
+    width: 700px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 50px;
+}
+.container img {
+    border-radius: 15px;
+    margin-top: 50px;
+    width: 700px;
+    height: 700px;
 }

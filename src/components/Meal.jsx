@@ -37,18 +37,21 @@ function Meal(){
     return(
 
 
-        <div>
-            {details ? <h1>{details.meals[0].strMeal}</h1> : null}
-            <h2>Instructions</h2>
-            <pre className={"preformatted-text"}>{instructions}</pre>
-            <h2>Ingredients</h2>
-            <ul>
-            {ingredients.map((ingredient,index) => (
-                ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
-            ))}
+        <div className={'container'}>
 
             {details ? <img src={details.meals[0].strMealThumb}/> : null}
-            </ul>
+
+            <div>
+                {details ? <h1>{details.meals[0].strMeal}</h1> : null}
+                <h2>Instructions</h2>
+                <pre className={"preformatted-text"}>{instructions}</pre>
+                <h2>Ingredients</h2>
+                <ul>
+                {ingredients.map((ingredient,index) => (
+                    ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
+                ))}
+                </ul>
+            </div>
 
         </div>
     )
