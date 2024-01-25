@@ -1,5 +1,6 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
+import '../styles/Meal.css'
 
 function Meal(){
     const {idMeal} = useParams();
@@ -39,7 +40,7 @@ function Meal(){
         <div>
             {details ? <h1>{details.meals[0].strMeal}</h1> : null}
             <h2>Instructions</h2>
-            <p>{instructions}</p>
+            <pre className={"preformatted-text"}>{instructions}</pre>
             <h2>Ingredients</h2>
             <ul>
             {ingredients.map((ingredient,index) => (
