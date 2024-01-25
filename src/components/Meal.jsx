@@ -33,12 +33,13 @@ function Meal(){
         <div>
             {details ? <h1>{details.meals[0].strMeal}</h1> : null}
             <h2>Ingredients</h2>
+            <ul>
             {ingredients.map((ingredient,index) => (
-                <h3 key={index}>{ingredient}</h3>
+                ingredient ? <li key={index}>{ingredient}</li> : null
             ))}
 
             {details ? <img src={details.meals[0].strMealThumb}/> : null}
-
+            </ul>
         </div>
     )
 }
