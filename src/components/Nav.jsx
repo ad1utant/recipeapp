@@ -5,7 +5,7 @@ function Nav(){
         <nav>
             <div className={'nav-items'}>
                 <div className={'first-child'}>
-                    <Link to={'/categorise'}>Categories</Link>
+                    <Link to={'/categories'}>Categories</Link>
                     <Link to={'/random'}>Random Meal</Link>
                     <Link to={'/search'}>Search</Link>
                 </div>
