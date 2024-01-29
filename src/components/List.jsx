@@ -33,8 +33,8 @@ useEffect(() =>{
 return (
     <>
         <form name={'form'} onSubmit={onSubmitHandle}>
-            <input ref={inputRef} placeholder={'search for meal'}/>
-            <button type="submit">search</button>
+            <input className={'form-control'} ref={inputRef} placeholder={'search for meal'}/>
+            <button className={'btn btn-primary'} type="submit">search</button>
         </form>
         <div className={'mealsList'}>
             {data && data.meals && data.meals.map( (meal) => (
