@@ -1,20 +1,26 @@
 import {Link} from "react-router-dom";
 import '/src/styles/Nav.css'
-function Nav(){
+import {Navbar, Nav, Container} from "react-bootstrap";
+
+function NavigationBar(){
     return(
-        <nav>
-            <div className={'nav-items'}>
-                <div className={'first-child'}>
-                    <Link to={'/categories'}>Categories</Link>
-                    <Link to={'/random'}>Random Meal</Link>
-                    <Link to={'/search'}>Search</Link>
-                </div>
-                <div className={'last-child'}>
-                    <Link to={'/about'}>About</Link>
-                    <Link to={'/login'}>Login</Link>
-                </div>
-            </div>
-        </nav>
+        <Navbar bg={'light'} expand={'lg'}>
+            <Container>
+                <Navbar.Brand href="/">Recipe App</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav>
+                        <Link className={'nav-link'} to={'/categories'}>Categories</Link>
+                        <Link className={'nav-link'} to={'/random'}>Random Meal</Link>
+                        <Link className={'nav-link'} to={'/search'}>Search</Link>
+                    </Nav>
+                    <Nav>
+                        <Link className={'nav-link'} to={'/about'}>About</Link>
+                        <Link className={'nav-link'} to={'/login'}>Login</Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }
-export default Nav
+export default NavigationBar
