@@ -37,9 +37,9 @@ return (
         </form>
         <div className={'d-flex flex-wrap col-10 m-3 justify-content-center mx-auto'}>
             {data && data.meals && data.meals.map( (meal) => (
-                <Link className={'custom-round flex-column border border-primary col-3 row-cols-3 m-3 justify-content-center '} to={meal.idMeal} key={meal.idMeal}>
-                        {meal.strMeal}
-                        <img className={'w-100 h-1'} src={meal.strMealThumb}/>
+                <Link className={' custom-border flex-column col-3 p-0 m-3 justify-content-center'} to={meal.idMeal} key={meal.idMeal}>
+                        <img className={'image-custom w-100 h-1'} src={meal.strMealThumb}/>
+                        <p className={'text-center'}>{meal.strMeal}</p>
                 </Link>
             ))}
             {data && data.meals === null ? <p> no dishes </p> : ""}
