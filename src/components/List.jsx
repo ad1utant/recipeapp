@@ -1,7 +1,6 @@
 import {useEffect, useRef, useState} from "react";
-import Nav from "./Nav.jsx";
 import {Link} from "react-router-dom";
-
+import '/src/styles/List.css'
 function List(){
 
 const [inputValue, setInputValue] = useState('')
@@ -32,13 +31,16 @@ useEffect(() =>{
 
 return (
     <>
-        <form name={'form'} onSubmit={onSubmitHandle}>
-            <input className={'form-control'} ref={inputRef} placeholder={'search for meal'}/>
+        <form className={'d-flex flex-row justify-content-center'} name={'form'} onSubmit={onSubmitHandle}>
+            <input className={'form-control col-7'} ref={inputRef} placeholder={'search for meal'}/>
             <button className={'btn btn-primary'} type="submit">search</button>
         </form>
-        <div className={'mealsList'}>
+        <div className={'d-flex flex-wrap col-10 m-3 justify-content-center mx-auto'}>
             {data && data.meals && data.meals.map( (meal) => (
-                <Link className={'meal'} to={meal.idMeal} key={meal.idMeal}>{meal.strMeal}</Link>
+                <Link className={'custom-round flex-column border border-primary col-3 row-cols-3 m-3 justify-content-center '} to={meal.idMeal} key={meal.idMeal}>
+                        {meal.strMeal}
+                        <img className={'w-100 h-1'} src={meal.strMealThumb}/>
+                </Link>
             ))}
             {data && data.meals === null ? <p> no dishes </p> : ""}
         </div>
