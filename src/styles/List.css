@@ -1,7 +1,7 @@
 .custom-border{
     border-radius: 10px;
     color: black;
-    border: black solid 0px;
+    width: 40vh;
     background-color: #F2F2F2;
 }
 .image-custom{

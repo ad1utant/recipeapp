@@ -31,13 +31,13 @@ useEffect(() =>{
 
 return (
     <>
-        <form className={'d-flex flex-row justify-content-center'} name={'form'} onSubmit={onSubmitHandle}>
+        <form className={'d-flex flex-row justify-content-center mt-3'} name={'form'} onSubmit={onSubmitHandle}>
             <input className={'form-control col-7'} ref={inputRef} placeholder={'search for meal'}/>
             <button className={'btn btn-primary'} type="submit">search</button>
         </form>
         <div className={'d-flex flex-wrap col-10 m-3 justify-content-center mx-auto'}>
             {data && data.meals && data.meals.map( (meal) => (
-                <Link className={' custom-border flex-column col-3 p-0 m-3 justify-content-center'} to={meal.idMeal} key={meal.idMeal}>
+                <Link className={' custom-border flex-column p-0 m-3 justify-content-center'} to={meal.idMeal} key={meal.idMeal}>
                         <img className={'image-custom w-100 h-1'} src={meal.strMealThumb}/>
                         <p className={'text-center'}>{meal.strMeal}</p>
                 </Link>
