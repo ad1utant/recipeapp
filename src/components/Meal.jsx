@@ -39,7 +39,7 @@ function Meal(){
 
         <div className={'container'}>
 
-            {details ? <img src={details.meals[0].strMealThumb}/> : null}
+            {details ? <img className={''} src={details.meals[0].strMealThumb}/> : null}
 
             <div>
                 {details ? <h1>{details.meals[0].strMeal}</h1> : null}
