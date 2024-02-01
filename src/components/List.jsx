@@ -33,7 +33,7 @@ return (
     <>
         <form className={'d-flex flex-row justify-content-center mt-3'} name={'form'} onSubmit={onSubmitHandle}>
             <input className={'form-control col-7'} ref={inputRef} placeholder={'search for meal'}/>
-            <button className={'btn btn-primary'} type="submit">search</button>
+            <button className={'btn btn-dark'} type="submit">search</button>
         </form>
         <div className={'d-flex flex-wrap col-10 m-3 justify-content-center mx-auto'}>
             {data && data.meals && data.meals.map( (meal) => (

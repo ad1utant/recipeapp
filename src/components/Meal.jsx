@@ -36,22 +36,26 @@ function Meal(){
 
     return(
 
-
-        <div className={'container'}>
-
-            {details ? <img className={''} src={details.meals[0].strMealThumb}/> : null}
-
-            <div>
-                {details ? <h1>{details.meals[0].strMeal}</h1> : null}
-                <h2>Instructions</h2>
-                <pre className={"preformatted-text"}>{instructions}</pre>
-                <h2>Ingredients</h2>
-                <ul>
-                {ingredients.map((ingredient,index) => (
-                    ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
-                ))}
-                </ul>
+        <div className={'container m-0 p-0'}>
+            {details ? <h1>{details.meals[0].strMeal}</h1> : null}
+            <div className={'d-flex'}>
+                <div className={'col-6'}>
+                    {details ? <img className={'img-fluid m-0 p-0'} src={details.meals[0].strMealThumb}/> : null}
+                </div>
+                <div>
+                    <h2>Ingredients</h2>
+                    <ul>
+                        {ingredients.map((ingredient,index) => (
+                                ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
+                        ))}
+                    </ul>
+                </div>
             </div>
+                <div>
+
+                    <h2>Instructions</h2>
+                    <pre className={"preformatted-text"}>{instructions}</pre>
+                </div>
 
         </div>
     )
