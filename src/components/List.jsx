@@ -31,12 +31,11 @@ useEffect(() =>{
 
 return (
     <>
-        <div className={'col-12'}>
-        <form className={'d-flex flex-row justify-content-center mt-3'} name={'form'} onSubmit={onSubmitHandle}>
-            <input className={'form-control'} ref={inputRef} placeholder={'search for meal'}/>
-            <button className={'btn btn-dark'} type="submit">search</button>
+
+        <form className={'d-flex flex-row justify-content-center mt-3 p-0'} name={'form'} onSubmit={onSubmitHandle}>
+            <input className={'form-control inp-radius-custom'} ref={inputRef} placeholder={'search for meal'}/>
+            <button className={'btn btn-dark btn-radius-custom'} type="submit">search</button>
         </form>
-        </div>
         <div className={'d-flex flex-wrap col-12 m-3 justify-content-center mx-auto'}>
             {data && data.meals && data.meals.map( (meal) => (
                 <Link className={' custom-border flex-column p-0 m-3 justify-content-center'} to={meal.idMeal} key={meal.idMeal}>
