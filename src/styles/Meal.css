@@ -1,3 +1,13 @@
 .preformatted-text{
     white-space: pre-wrap;
 }
+.round-corners-img-title{
+    border-radius: 10px;
+}
+.round-corners-img-title img{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.round-corners{
+    border-radius: 10px;
+}

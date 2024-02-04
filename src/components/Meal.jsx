@@ -36,26 +36,29 @@ function Meal(){
 
     return(
 
-        <div className={'container m-0 p-0'}>
-            {details ? <h1>{details.meals[0].strMeal}</h1> : null}
-            <div className={'d-flex'}>
-                <div className={'col-6'}>
+        <div className={'container justify-content-center m-0 p-4'}>
+            <div className={'text-center bg-light round-corners-img-title'}>
+                {details ? <h1>{details.meals[0].strMeal}</h1> : null}
+                <div className={'col-xs-12'}>
                     {details ? <img className={'img-fluid m-0 p-0'} src={details.meals[0].strMealThumb}/> : null}
                 </div>
-                <div>
-                    <h2>Ingredients</h2>
-                    <ul>
-                        {ingredients.map((ingredient,index) => (
-                                ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
-                        ))}
-                    </ul>
-                </div>
             </div>
-                <div>
 
-                    <h2>Instructions</h2>
-                    <pre className={"preformatted-text"}>{instructions}</pre>
+            <div className={'col-xs-12 mt-4 p-2 bg-light round-corners'}>
+                <div className={'text-center'}>
+                    <h2>Ingredients</h2>
                 </div>
+                <ul>
+                    {ingredients.map((ingredient,index) => (
+                            ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
+                    ))}
+                </ul>
+            </div>
+
+            <div className={'col-xs-12 mt-4 p-2 bg-light round-corners'}>
+                <h2>Instructions</h2>
+                <pre className={"preformatted-text"}>{instructions}</pre>
+            </div>
 
         </div>
     )
