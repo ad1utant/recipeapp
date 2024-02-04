@@ -36,15 +36,13 @@ function Meal(){
 
     return(
 
-        <div className={'container justify-content-center m-0 p-4'}>
-            <div className={'text-center bg-light round-corners-img-title'}>
+        <div className={'row m-0 p-4 justify-content-center'}>
+            <div className={'me-md-2 col-lg-4 col-xs-12 col-sm-12 col-md-5 text-center ml bg-light round-corners-img-title pt-2 p-0'}>
                 {details ? <h2>{details.meals[0].strMeal}</h2> : null}
-                <div className={'col-xs-12'}>
-                    {details ? <img className={'img-fluid m-0 p-0'} src={details.meals[0].strMealThumb}/> : null}
-                </div>
+                    {details ? <img className={'img-fluid'} src={details.meals[0].strMealThumb}/> : null}
             </div>
 
-            <div className={'col-xs-12 mt-4 p-2 bg-light round-corners'}>
+            <div className={'ms-md-2 col-xs-12 col-lg-7 col-md-6 col-sm-12 mt-4 mt-sm-4 mt-md-0 mt-lg-0 p-2 bg-light height round-corners'}>
                 <div className={'text-center'}>
                     <h2>Ingredients</h2>
                 </div>
@@ -55,7 +53,7 @@ function Meal(){
                 </ul>
             </div>
 
-            <div className={'col-xs-12 mt-4 p-2 bg-light round-corners'}>
+            <div className={'col-xs-12 col-sm-12 col-md-12 col-lg-11 mt-4 p-3 bg-light round-corners'}>
                 <h2>Instructions</h2>
                 <pre className={"preformatted-text"}>{instructions}</pre>
             </div>
