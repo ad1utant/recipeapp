@@ -38,7 +38,7 @@ function Meal(){
 
         <div className={'container justify-content-center m-0 p-4'}>
             <div className={'text-center bg-light round-corners-img-title'}>
-                {details ? <h1>{details.meals[0].strMeal}</h1> : null}
+                {details ? <h2>{details.meals[0].strMeal}</h2> : null}
                 <div className={'col-xs-12'}>
                     {details ? <img className={'img-fluid m-0 p-0'} src={details.meals[0].strMealThumb}/> : null}
                 </div>
