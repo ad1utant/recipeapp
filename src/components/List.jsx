@@ -30,15 +30,15 @@ useEffect(() =>{
 },[inputValue])
 
 return (
-    <>
+    <div className={'col-12'}>
 
-        <form className={'d-flex flex-row justify-content-center mt-3 p-0'} name={'form'} onSubmit={onSubmitHandle}>
+        <form className={'col-12 d-flex mt-3 m-0 p-0'} name={'form'} onSubmit={onSubmitHandle}>
             <input className={'form-control inp-radius-custom'} ref={inputRef} placeholder={'search for meal'}/>
             <button className={'btn btn-dark btn-radius-custom'} type="submit">search</button>
         </form>
-        <div className={'d-flex flex-wrap col-12 m-3 justify-content-center mx-auto'}>
+        <div className={'d-flex row m-0 p-0'}>
             {data && data.meals && data.meals.map( (meal) => (
-                <Link className={' custom-border flex-column p-0 m-3 justify-content-center'} to={meal.idMeal} key={meal.idMeal}>
+                <Link className={'custom-border col-lg-3 col-md-4 col-sm-6 col-xs-12 flex-column p-0 m-0 justify-content-center'} to={meal.idMeal} key={meal.idMeal}>
                         <img className={'image-custom w-100 h-1'} src={meal.strMealThumb}/>
                         <p className={'text-center'}>{meal.strMeal}</p>
                 </Link>
@@ -47,6 +47,6 @@ return (
         </div>
 
 
-    </>
+    </div>
 )}
 export default List
