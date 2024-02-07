@@ -30,3 +30,4 @@ Recipe App is a web application that allows users to discover and search for var
 ## Preview
 ![image](https://github.com/ad1utant/recipeapp/assets/96024531/9e55ab3b-0413-40a9-8527-b1fdc7420cc0)
 
+![preview](https://github.com/ad1utant/recipeapp/assets/96024531/0c026c66-3d0d-41ad-8a5c-f9dd8a1e693e)
