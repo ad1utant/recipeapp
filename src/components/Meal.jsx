@@ -36,13 +36,13 @@ function Meal(){
 
     return(
 
-        <div className={'box-sizing row m-0 p-4 justify-content-center'}>
-            <div className={'box-sizing me-md-2 col-lg-5 col-xs-12 col-sm-12 col-md-5 text-center ml bg-light round-corners-img-title pt-2 p-0'}>
+        <div className={'row m-0 p-4 justify-content-center col-12'}>
+            <div className={'col-lg col-md col-xs-12 me-md-2 me-lg-2  col-sm-12 col-md-5 text-center bg-light round-corners-img-title pt-2 p-0'}>
                 {details ? <h2>{details.meals[0].strMeal}</h2> : null}
-                    {details ? <img className={'img-fluid'} src={details.meals[0].strMealThumb}/> : null}
+                    {details ? <img className={'img-fluid col-12'} src={details.meals[0].strMealThumb}/> : null}
             </div>
 
-            <div className={'box-sizing ms-md-2 col-xs-12 col-lg-7 col-md-6 col-sm-12 mt-4 mt-sm-4 mt-md-0 mt-lg-0 p-2 bg-light height round-corners'}>
+            <div className={'col-xs-12 col-lg ms-lg-2 ms-md-2 col-md-6 col-sm-12 mt-4 mt-sm-4 mt-md-0 mt-lg-0 p-2 bg-light height round-corners'}>
                 <div className={'text-center'}>
                     <h2>Ingredients</h2>
                 </div>
@@ -53,9 +53,11 @@ function Meal(){
                 </ul>
             </div>
 
-            <div className={'col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-4 p-3 bg-light round-corners'}>
-                <h2>Instructions</h2>
-                <pre className={"preformatted-text"}>{instructions}</pre>
+            <div className={'box-sizing col-xs-12 col-sm-12 col-md-11 col-lg-11 mt-4 p-md-2 p-lg-2 p-3 bg-light round-corners'}>
+                <div className={'p-4'}>
+                    <h2>Instructions</h2>
+                    <pre className={"preformatted-text"}>{instructions}</pre>
+                </div>
             </div>
 
         </div>
