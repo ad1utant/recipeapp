@@ -30,18 +30,21 @@ useEffect(() =>{
 },[inputValue])
 
 return (
-    <div className={'col-12'}>
+    <div className={'col-12 pe-5 ps-5'}>
 
-        <form className={'col-12 d-flex mt-3 m-0 p-0'} name={'form'} onSubmit={onSubmitHandle}>
+        <form className={'ps-2 pe-2 col-12 d-flex mt-3 m-0 p-0'} name={'form'} onSubmit={onSubmitHandle}>
             <input className={'form-control inp-radius-custom'} ref={inputRef} placeholder={'search for meal'}/>
             <button className={'btn btn-dark btn-radius-custom'} type="submit">search</button>
         </form>
-        <div className={'d-flex row m-0 p-0'}>
+
+        <div className={'d-flex row m-0 p-0 col-12'}>
             {data && data.meals && data.meals.map( (meal) => (
-                <Link className={'custom-border col-lg-3 col-md-4 col-sm-6 col-xs-12 flex-column p-0 m-0 justify-content-center'} to={meal.idMeal} key={meal.idMeal}>
-                        <img className={'image-custom w-100 h-1'} src={meal.strMealThumb}/>
+            <div key={meal.idMeal} className={'p-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'}>
+                <Link className={'custom-border flex-column m-0 p-0 justify-content-center col-12'} to={meal.idMeal} >
+                        <img className={'image-custom col-12'} src={meal.strMealThumb}/>
                         <p className={'text-center'}>{meal.strMeal}</p>
                 </Link>
+            </div>
             ))}
             {data && data.meals === null ? <p> no dishes </p> : ""}
         </div>
