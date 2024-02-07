@@ -42,7 +42,7 @@ return (
             <div key={meal.idMeal} className={'p-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'}>
                 <Link className={'custom-border flex-column m-0 p-0 justify-content-center col-12'} to={meal.idMeal} >
                         <img className={'image-custom col-12'} src={meal.strMealThumb}/>
-                        <p className={'text-center'}>{meal.strMeal}</p>
+                        <div className={'text-center bg-light div-border'}>{meal.strMeal}</div>
                 </Link>
             </div>
             ))}
