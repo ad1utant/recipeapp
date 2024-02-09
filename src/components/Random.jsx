@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
-
+import '../styles/Random.css'
 function Random(){
     const [details,setDetails] = useState();
     const [ingredients,setIngredients] = useState([]);
     const [measures,setMeasures] = useState([]);
     const [instructions, setInstructions] = useState();
-    let counter = 0;
     const  fetches = async () => {
         try {
             let arrayIngredients = [];
@@ -38,35 +37,40 @@ function Random(){
 
     return(
 
-        <div className={'row m-0 p-4 justify-content-center col-12'}>
-            <div className={'col-lg col-md col-xs-12 me-md-2 me-lg-2  col-sm-12 col-md-5 text-center bg-light round-corners-img-title pt-2 p-0'}>
-                {details ? <h2>{details.meals[0].strMeal}</h2> : null}
-                {details ? <img className={'img-fluid col-12'} src={details.meals[0].strMealThumb}/> : null}
-            </div>
-
-            <div className={'col-xs-12 col-lg ms-lg-2 ms-md-2 col-md-6 col-sm-12 mt-4 mt-sm-4 mt-md-0 mt-lg-0 p-2 bg-primary height round-corners'}>
-                <div className={'text-center'}>
-                    <h2>Ingredients</h2>
+        <div className={'row m-0 p-4 justify-content-center col-12 gap-0'}>
+            <div className={'col-lg-6 col-xs-12 col-sm-12 col-md-6 pe-md-2 pe-lg-2 pe-sm-0 pe-0 ps-0'}>
+                <div className={'grid-item text-center bg-light round-corners-img-title pt-2 ps-0 pe-0'}>
+                    {details ? <h2>{details.meals[0].strMeal}</h2> : null}
+                    {details ? <img className={'img-fluid col-12'} src={details.meals[0].strMealThumb}/> : null}
                 </div>
-                <ul>
-                    {ingredients.map((ingredient,index) => (
-                        ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
-                    ))}
-                </ul>
             </div>
 
-            <div className={'col-xs-12 col-sm-12 col-md-11 col-lg-11 mt-4 p-2 bg-primary round-corners'}>
-                <div className={'p-lg-4 p-md-4'}>
+            <div className={'col-xs-12 col-sm-12 col-md-6 col-lg-6 ps-sm-0 ps-0 ps-lg-2 ps-md-2 pe-0 mt-sm-4 mt-4 mt-lg-0 mt-md-0'}>
+                <div className={'grid-item ps-lg-2 ps-md-2 height bg-light round-corners'}>
+                    <div className={'text-center p-0 m-0'}>
+                        <h2>Ingredients</h2>
+                    </div>
+                    <ul>
+                        {ingredients.map((ingredient,index) => (
+                            ingredient ? <li key={`${index}ing`}>{ingredient} - {measures[index]}</li> : null
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
+            <div className={'col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-4 m-lg-4 p-0 bg-light round-corners'}>
+                <div className={'grid-item p-4'}>
                     <h2>Instructions</h2>
                     <pre className={"preformatted-text"}>{instructions}</pre>
                 </div>
             </div>
 
-            <button onClick={handleButtonClick} className={'btn btn-dark round-corners col-12 mt-4'}>
+            <button onClick={handleButtonClick} className={'btn btn-dark round-corners col-sm-12 col-xs-12 col-md-12 col-lg-12 mt-4 mt-lg-1'}>
                 next meal
             </button>
 
         </div>
+
     )
 }
 export default Random
