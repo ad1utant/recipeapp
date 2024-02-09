@@ -5,30 +5,34 @@ function Random(){
     const [ingredients,setIngredients] = useState([]);
     const [measures,setMeasures] = useState([]);
     const [instructions, setInstructions] = useState();
+    let counter = 0;
+    const  fetches = async () => {
+        try {
+            let arrayIngredients = [];
+            let arrayMeasures = [];
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
+            const data = await response.json();
+            for(let i = 0 ; i<=20 ; i++){
+                arrayIngredients.push(data.meals[0][`strIngredient${i}`]);
+                arrayMeasures.push(data.meals[0][`strMeasure${i}`]);
+            }
+            const {strInstructions} = data.meals[0];
+            setInstructions(strInstructions);
+            console.log(ingredients);
+            setIngredients(arrayIngredients);
+            setMeasures(arrayMeasures);
+            setDetails(data);
+            console.log(data);
+
+        }catch (err){
+            console.error(err);
+        }}
+    const handleButtonClick =  () => {
+        fetches()
+    }
+
     useEffect( () => {
-        const  fetches = async () => {
-            try {
-                let arrayIngredients = [];
-                let arrayMeasures = [];
-                const response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
-                const data = await response.json();
-                for(let i = 0 ; i<=20 ; i++){
-                    arrayIngredients.push(data.meals[0][`strIngredient${i}`]);
-                    arrayMeasures.push(data.meals[0][`strMeasure${i}`]);
-                }
-                const {strInstructions} = data.meals[0];
-                setInstructions(strInstructions);
-                console.log(ingredients);
-                setIngredients(arrayIngredients);
-                setMeasures(arrayMeasures);
-                setDetails(data);
-                console.log(data);
-
-            }catch (err){
-                console.error(err);
-            }}
         fetches();
-
     },[])
 
 
@@ -40,7 +44,7 @@ function Random(){
                 {details ? <img className={'img-fluid col-12'} src={details.meals[0].strMealThumb}/> : null}
             </div>
 
-            <div className={'col-xs-12 col-lg ms-lg-2 ms-md-2 col-md-6 col-sm-12 mt-4 mt-sm-4 mt-md-0 mt-lg-0 p-2 bg-light height round-corners'}>
+            <div className={'col-xs-12 col-lg ms-lg-2 ms-md-2 col-md-6 col-sm-12 mt-4 mt-sm-4 mt-md-0 mt-lg-0 p-2 bg-primary height round-corners'}>
                 <div className={'text-center'}>
                     <h2>Ingredients</h2>
                 </div>
@@ -51,12 +55,16 @@ function Random(){
                 </ul>
             </div>
 
-            <div className={'box-sizing col-xs-12 col-sm-12 col-md-11 col-lg-11 mt-4 p-md-2 p-lg-2 p-3 bg-light round-corners'}>
-                <div className={'p-4'}>
+            <div className={'col-xs-12 col-sm-12 col-md-11 col-lg-11 mt-4 p-2 bg-primary round-corners'}>
+                <div className={'p-lg-4 p-md-4'}>
                     <h2>Instructions</h2>
                     <pre className={"preformatted-text"}>{instructions}</pre>
                 </div>
             </div>
+
+            <button onClick={handleButtonClick} className={'btn btn-dark round-corners col-12 mt-4'}>
+                next meal
+            </button>
 
         </div>
     )
