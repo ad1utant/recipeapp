@@ -40,9 +40,9 @@ return (
         <div className={'d-flex row m-0 p-0 col-12'}>
             {data && data.meals && data.meals.map( (meal) => (
             <div key={meal.idMeal} className={'p-2 col-lg-3 col-md-4 col-sm-6 col-xs-12'}>
-                <Link className={'custom-border flex-column m-0 p-0 justify-content-center col-12'} to={meal.idMeal} >
+                <Link className={'custom-border flex-column m-0 p-0  text-decoration-none justify-content-center col-12'} to={meal.idMeal} >
                         <img className={'image-custom col-12'} src={meal.strMealThumb}/>
-                        <div className={'text-center bg-light div-border'}>{meal.strMeal}</div>
+                        <div className={'text-center pt-2 pb-2 bg-light div-border'}>{meal.strMeal}</div>
                 </Link>
             </div>
             ))}
