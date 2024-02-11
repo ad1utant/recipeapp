@@ -32,14 +32,14 @@ useEffect(() =>{
 },[inputValue])
 
 return (
-    <div className={'row'}>
+    <div className={'col-12'}>
         <Slider/>
-        <div className={'col-12 pe-5 ps-5'}>
+        <div className={'col-12'}>
 
 
-            <form className={'ps-2 pe-2 col-12 d-flex mt-3 m-0 p-0'} name={'form'} onSubmit={onSubmitHandle}>
-                <input className={'form-control inp-radius-custom'} ref={inputRef} placeholder={'search for meal'}/>
-                <button className={'btn btn-dark btn-radius-custom'} type="submit">search</button>
+            <form className={'col-12 d-flex m-0 p-0'} name={'form'} onSubmit={onSubmitHandle}>
+                <input className={'form-control custom-inp radius-custom'} ref={inputRef} placeholder={'search for meal'}/>
+                <button className={'btn btn-dark radius-custom'} type="submit">search</button>
             </form>
 
             <div className={'d-flex row m-0 p-0 col-12'}>
